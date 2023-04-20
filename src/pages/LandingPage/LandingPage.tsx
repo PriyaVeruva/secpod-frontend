@@ -16,7 +16,7 @@ import Slider from "react-slick";
 import Features from "../Features/Features";
 import Tools from "../Tools/Tools";
 import Pricing from "../Pricing/Pricing";
-import Carousel from "react-grid-carousel";
+// import Carousel from "react-grid-carousel";
 function LandingPage() {
 	const settings = {
 		dots: true,
@@ -65,7 +65,7 @@ function LandingPage() {
 
 				{/*carousel 1  */}
 				<div className={styles.gridCarousel}>
-					<Carousel
+					{/* <Carousel
 						cols={6}
 						rows={2}
 						gap={10}
@@ -97,7 +97,7 @@ function LandingPage() {
 								</Carousel.Item>
 							);
 						})}
-					</Carousel>
+					</Carousel> */}
 				</div>
 
 				{/* carousel 2 */}
