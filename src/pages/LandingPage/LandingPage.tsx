@@ -1,6 +1,7 @@
 import TopNavBar from "../../components/TopNavBar/TopNavBar";
 import styles from "./LandingPage.module.css";
 import { ButtonContentData, carouselDataContent1, Logos } from "./data";
+import React from 'react'
 import {
 	HEADER_CONTENT,
 	LEADING_ORGANIZATIONS_TITLE,
