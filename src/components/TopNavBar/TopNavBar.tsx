@@ -1,6 +1,7 @@
+import React from "react"
 import styles from "./TopNavBar.module.css";
 import { HeaderData } from "./data";
-function TopNavBar() {
+	function TopNavBar() {
 	return (
 		<div className={styles.header}>
 			<span className={styles.Logo}>
