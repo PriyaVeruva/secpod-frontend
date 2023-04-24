@@ -24,13 +24,6 @@
 	color: var(--darkPara);
 	margin-bottom: 40px;
 }
-.button {
-	border-radius: 4px;
-	border: solid 1px var(--primaryColor);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
 
 .buttonText {
 	font-size: 18px;
@@ -129,7 +122,7 @@
 	margin-bottom: 20px;
 }
 .features {
-	white-space: nowrap;
+	text-align: start;
 }
 
 .featuresText {

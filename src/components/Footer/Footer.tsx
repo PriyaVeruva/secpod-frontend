@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import {
+	COPY_RIGHT_CONTENT,
 	ENDORSEMENTS_HEADER_TEXT,
 	ENDORSEMENTS_SUB_HEADING,
 } from "../../utils/cms";
@@ -27,9 +28,12 @@ function Footer() {
 					</div>
 				</div>
 				<div className={styles.imagesSection}>
-					{LogoImages.map((ele: any) => {
+					{LogoImages.map((ele, i: any) => {
 						return (
-							<div className={styles.logoBackground}>
+							<div
+								key={i}
+								className={styles.logoBackground}
+							>
 								<img src={ele.image} alt="" />
 							</div>
 						);
@@ -40,14 +44,14 @@ function Footer() {
 			<div className={styles.footerSections}>
 				{FooterData.map((ele, i) => {
 					return (
-						<div className={styles.footerData}>
+						<div className={styles.footerData} key={i}>
 							<div className={styles.footerHeading}>
 								{ele.heading}
 							</div>
 							<ul>
 								{ele.contents.map((e, i) => {
 									return (
-										<Link to={e.path}>
+										<Link to={e.path} key={i}>
 											<li>{e.subHeadings}</li>
 										</Link>
 									);
@@ -66,14 +70,14 @@ function Footer() {
 					<div className={styles.socialMediaLogos}>
 						{SocialMediaLinksAndLogos.map((ele, i) => {
 							return (
-								<Link to={ele.link}>
+								<Link to={ele.link} key={i}>
 									<img src={ele.image} alt="" />
 								</Link>
 							);
 						})}
 					</div>
 					<div className={styles.copyRight}>
-						Copyright 2023-SanerNow
+						{COPY_RIGHT_CONTENT}
 					</div>
 				</div>
 			</div>

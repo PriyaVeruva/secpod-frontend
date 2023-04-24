@@ -14,6 +14,7 @@ function Pricing() {
 				{cardContainerData2.map((ele, i) => {
 					return (
 						<FeaturesCardComponent
+							key={i}
 							id={ele.id}
 							heading={ele.heading}
 							subHeading={ele.subHeading}

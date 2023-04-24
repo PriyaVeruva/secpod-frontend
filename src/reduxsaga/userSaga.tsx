@@ -9,7 +9,7 @@ import {
 interface responseData {
 	data: any;
 }
-function* userSaga(action: any) {
+export function* userSaga(action: any) {
 	try {
 		const response: responseData = yield call(
 			axios.post,

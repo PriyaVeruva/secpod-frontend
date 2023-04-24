@@ -19,6 +19,8 @@
     /* added */
     /* padding-inline: 12%; */
 	overflow: hidden;
+    
+    
 }
 
 .slick-list
@@ -106,7 +108,9 @@
 }
 .slick-initialized .slick-slide
 {
-    display: block;
+    display:block   
+    
+    
 }
 .slick-loading .slick-slide
 {

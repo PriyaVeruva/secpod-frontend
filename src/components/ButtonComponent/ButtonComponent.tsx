@@ -1,15 +1,7 @@
 import React from "react";
 import { Button } from "@mui/material";
-interface ButtonProps {
-	buttonText: string;
-	onClick: any;
-	variant?: "text" | "outlined" | "contained";
-	className?: string;
-	fullWidth?: boolean;
-	style?: any;
-	type?: "button" | "submit" | "reset";
-}
-const ButtonComponent: React.FC<ButtonProps> = ({
+
+const ButtonComponent = ({
 	variant,
 	onClick,
 	buttonText,
@@ -17,11 +9,11 @@ const ButtonComponent: React.FC<ButtonProps> = ({
 	className,
 	type,
 	style,
-}) => {
+}: any) => {
 	return (
 		<Button
 			variant={variant}
-			onClick={onClick}
+			onClick={onClick ? onClick : null}
 			type={type}
 			fullWidth={fullWidth}
 			className={className}

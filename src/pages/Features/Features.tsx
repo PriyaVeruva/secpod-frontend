@@ -15,18 +15,23 @@ function Features() {
 	return (
 		<div className={styles.bodyContent2} id="features">
 			<div className={styles.bodyContentSection2}>
-			<div className={styles.headerContent3}>{HEADER_CONTENT_2}</div>
+				<div className={styles.headerContent3}>
+					{HEADER_CONTENT_2}
+				</div>
 
-			<div className={styles.paragraphContent}>
-				{PARAGRAPH_CONTENT_2}
+				<div className={styles.paragraphContent}>
+					{PARAGRAPH_CONTENT_2}
+				</div>
 			</div>
-</div>
 
 			<div className={styles.carouselSlider}>
 				<Slider {...settings}>
 					{carouselDataContent2.map((ele, i) => {
 						return (
-							<div className={styles.carouselVisibility}>
+							<div
+								className={styles.carouselVisibility}
+								key={i}
+							>
 								<div
 									className={
 										styles.carouselContentSection2

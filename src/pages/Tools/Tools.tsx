@@ -11,23 +11,24 @@ import styles from "../LandingPage/LandingPage.module.css";
 function Tools() {
 	return (
 		<div className={styles.contentSection}>
-			<marquee className={styles.marquee} >
+			<marquee className={styles.marquee}>
 				{POWERFUL_TOOLS_CONTENT}
 				<span>{POWERFUL_TOOLS_CONTENT}</span>
 			</marquee>
 			<div className={styles.bodyContentSection2}>
-			<div className={styles.titleContent}>
-				{SECURITY_AND_IT_HEADER_CONTENT}{" "}
-			</div>
-			<div className={styles.titleSubContent}>
-				{SECURITY_AND_IT_SUB_CONTENT}
-			</div>
+				<div className={styles.titleContent}>
+					{SECURITY_AND_IT_HEADER_CONTENT}{" "}
+				</div>
+				<div className={styles.titleSubContent}>
+					{SECURITY_AND_IT_SUB_CONTENT}
+				</div>
 			</div>
 
 			<div className={styles.cardContentSection}>
 				{cardContainerData.map((ele, i) => {
 					return (
 						<CardComponent
+							key={i}
 							image={ele.image}
 							heading={ele.heading}
 							subHeading={ele.subHeading}
@@ -35,13 +36,8 @@ function Tools() {
 					);
 				})}
 			</div>
-			<div className={styles.button}>
-				<a
-					className={styles.buttonContentSection}
-					href="#getStarted"
-				>
-					GET STARTED
-				</a>
+			<div className={styles.buttonContentSection}>
+				<a href="#getStarted">GET STARTED</a>
 			</div>
 		</div>
 	);

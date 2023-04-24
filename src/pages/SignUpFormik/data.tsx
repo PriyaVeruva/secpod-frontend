@@ -1,36 +1,24 @@
 export const FormFieldsData = [
 	{
 		label: "Name",
-		variant: "outlined",
 		name: "name",
-		fullWidth: "fullWidth",
-
+		type: "text",
 	},
 	{
 		label: "Email",
-		fullWidth: "fullWidth",
-		variant: "outlined",
 		name: "email",
-
+		type: "email",
 	},
 	{
-		fullWidth: "fullWidth",
-		variant: "outlined",
 		label: "Mobile number",
 		name: "phoneNumber",
+		type: "number",
+
+		maxLength: 10,
 	},
 	{
-		fullWidth: "fullWidth",
-		variant: "outlined",
 		label: "Company name",
 		name: "companyName",
-
-	},
-	{
-		fullWidth: "fullWidth",
-		variant: "outlined",
-		label: "Password",
-		name: "password",
-
+		type: "text",
 	},
 ];

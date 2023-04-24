@@ -1,33 +1,43 @@
-import { Field, Form } from "formik";
 import React from "react";
-
+import { TextField } from "@mui/material";
 function TextFieldComponent({
-	label,
+	type,
 	name,
-	as,
-	fullWidth,
-	variant,
-	error,
-	helperText,
-	InputProps,
-	InputLabelProps,
-	...props
+	label,
+	field,
+	form: { touched, errors },
+	endAdornment,
 }: any) {
+	const hasError = touched[field.name] && Boolean(errors[field.name]);
+
 	return (
 		<div>
-			<Form>
-				<Field
-					label={label}
-					name={name}
-					as={as}
-					fullWidth={fullWidth}
-					variant={variant}
-					error={error}
-					helperText={helperText}
-					InputProps={InputProps}
-					InputLabelProps={InputLabelProps}
-				/>
-			</Form>
+			<TextField
+				{...field}
+				type={type}
+				name={name}
+				label={label}
+				variant="outlined"
+				fullWidth={true}
+				error={hasError}
+				helperText={hasError ? errors[field.name] : undefined}
+				InputLabelProps={{
+					style: {
+						fontSize: "24px",
+						color: "var(--darkPara)",
+						fontFamily: "Futura-Medium",
+					},
+				}}
+				InputProps={{
+					style: {
+						color:
+							touched[name] &&
+							errors[name] &&
+							"var(--error)",
+					},
+					endAdornment: endAdornment,
+				}}
+			/>
 		</div>
 	);
 }

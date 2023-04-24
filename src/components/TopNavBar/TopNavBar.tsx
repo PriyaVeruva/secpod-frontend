@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
 import styles from "./TopNavBar.module.css";
 import { HeaderData } from "./data";
-	function TopNavBar() {
+function TopNavBar() {
 	return (
 		<div className={styles.header}>
 			<span className={styles.Logo}>
@@ -10,7 +10,7 @@ import { HeaderData } from "./data";
 			<ul className={styles.nav_links}>
 				{HeaderData.map((ele, i) => {
 					return (
-						<li>
+						<li key={i}>
 							<a
 								href={ele.path}
 								className={

@@ -1,7 +1,7 @@
 import TopNavBar from "../../components/TopNavBar/TopNavBar";
 import styles from "./LandingPage.module.css";
 import { ButtonContentData, carouselDataContent1, Logos } from "./data";
-import React from 'react'
+import React from "react";
 import {
 	HEADER_CONTENT,
 	LEADING_ORGANIZATIONS_TITLE,
@@ -17,9 +17,8 @@ import Slider from "react-slick";
 import Features from "../Features/Features";
 import Tools from "../Tools/Tools";
 import Pricing from "../Pricing/Pricing";
+import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 // import Carousel from "react-grid-carousel";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 function LandingPage() {
 	const settings = {
 		dots: true,
@@ -29,23 +28,33 @@ function LandingPage() {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 	};
-	const responsive = {
-		desktop: {
-		  breakpoint: { max: 3000, min: 1024 },
-		  items: 3,
-		  slidesToSlide: 3 // optional, default to 1.
-		},
-		tablet: {
-		  breakpoint: { max: 1024, min: 464 },
-		  items: 2,
-		  slidesToSlide: 2 // optional, default to 1.
-		},
-		mobile: {
-		  breakpoint: { max: 464, min: 0 },
-		  items: 1,
-		  slidesToSlide: 1 // optional, default to 1.
-		}
-	  };
+
+	type arrowDataType = {
+		onClick?: () => void;
+	};
+
+	function NextArrow({ onClick }: arrowDataType): JSX.Element {
+		return (
+			<div
+				className={`${styles.arrow} ${styles.right}`}
+				onClick={onClick}
+			>
+				<AiOutlineRight />
+			</div>
+		);
+	}
+
+	function PrevArrow({ onClick }: arrowDataType): JSX.Element {
+		return (
+			<div
+				className={`${styles.arrow} ${styles.left}`}
+				onClick={onClick}
+			>
+				<AiOutlineLeft />
+			</div>
+		);
+	}
+
 	return (
 		<>
 			<TopNavBar />
@@ -62,6 +71,7 @@ function LandingPage() {
 						{ButtonContentData.map((ele, i) => {
 							return (
 								<a
+									key={i}
 									href={ele.path}
 									className={
 										ele.type === "button1"
@@ -85,47 +95,62 @@ function LandingPage() {
 
 				{/*carousel 1  */}
 				<div className={styles.gridCarousel}>
-					
-				<Carousel
-  swipeable={false}
-  draggable={false}
-//   showDots={true}
-  responsive={responsive}
-  ssr={true} // means to render carousel on server-side.
-  infinite={true}
-//   autoPlay={this.props.deviceType !== "mobile" ? true : false}
-  autoPlaySpeed={1000}
-  keyBoardControl={true}
-  customTransition="all .5"
-  transitionDuration={500}
-  containerClass="carousel-container"
-  removeArrowOnDeviceType={["tablet", "mobile"]}
-//   deviceType={this.props.deviceType}
-  dotListClass="custom-dot-list-style"
-  itemClass="carousel-item-padding-40-px"
->
-{Logos.map((ele, i) => {
+					<Slider
+						{...{
+							settings,
+							rows: 2,
+							slidesPerRow: 2,
+							centerMode: true,
+							centerPadding: "360px",
+							autoplay: true,
+							nextArrow: <NextArrow />,
+							prevArrow: <PrevArrow />,
+							// className:"center",
+
+							responsive: [
+								{
+									breakpoint: 1200,
+									settings: {
+										slidesToShow: 4,
+										slidesToScroll: 1,
+									},
+								},
+								{
+									breakpoint: 900,
+									settings: {
+										slidesToShow: 3,
+										slidesToScroll: 1,
+										initialSlide: 3,
+									},
+								},
+								{
+									breakpoint: 700,
+									settings: {
+										slidesToShow: 2,
+										slidesToScroll: 1,
+									},
+								},
+								{
+									breakpoint: 500,
+									settings: {
+										slidesToShow: 2,
+										slidesToScroll: 1,
+									},
+								},
+							],
+						}}
+					>
+						{Logos.map((ele, i) => {
 							return (
-								
-									<div
-										className={
-											styles.imageSection2
-										}
-									>
-										<img src={ele.image} alt="" />
-									</div>
-								
-							)
+								<div
+									className={styles.imageSection2}
+									key={i}
+								>
+									<img src={ele.image} alt="" />
+								</div>
+							);
 						})}
-</Carousel>;
-
-
-
-
-
-
-
-
+					</Slider>
 
 					{/* <Carousel
 						cols={6}
@@ -169,7 +194,10 @@ function LandingPage() {
 						<Slider {...settings}>
 							{carouselDataContent1.map((ele, i) => {
 								return (
-									<div className={styles.contains}>
+									<div
+										className={styles.contains}
+										key={i}
+									>
 										<img
 											src={ele.image}
 											alt=""

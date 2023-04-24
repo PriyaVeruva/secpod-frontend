@@ -4,7 +4,7 @@ const nameSchema = Yup.string().matches(
 	"Name should contain only alphabets"
 );
 const emailSchema = Yup.string().matches(
-	/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+	/^([a-zA-Z0-9]+)([\.{1}])?([a-zA-Z0-9]+)\@gmail([\.])com/g,
 	"Invalid email address"
 );
 const mobileSchema = Yup.string().matches(
@@ -15,16 +15,17 @@ const passwordSchema = Yup.string().min(
 	8,
 	"Password should be at least 8 characters long"
 );
-export function validateField(
-	value: string,
-	schema: Yup.StringSchema
-): string | undefined {
-	try {
-		schema.validateSync(value);
-	} catch (error: any) {
-		return error.message;
-	}
-}
+
+// export function validateField(
+// 	value: string,
+// 	schema: Yup.StringSchema
+// ): string | undefined {
+// 	try {
+// 		schema.validateSync(value);
+// 	} catch (error: any) {
+// 		return error.message;
+// 	}
+// }
 export const validationSchema = Yup.object({
 	name: nameSchema.required("Name is required"),
 	email: emailSchema.required("Email is required"),

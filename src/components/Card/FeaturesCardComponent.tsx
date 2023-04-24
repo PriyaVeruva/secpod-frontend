@@ -32,12 +32,12 @@ const FeaturesCardComponent: React.FC<featuresCardProps> = ({
 		boxShadow: isHovered
 			? "0 2px 10px 2px rgba(2, 15, 28, 0.3)"
 			: "0 2px 10px 2px rgba(100, 100, 100, 0.3)",
-		transition: "background-color 0.9s ease-in-out",
+		transition: "background-color 0.4s ease-in-out",
 	};
 
 	const headingStyle = {
 		color: isHovered ? "#ebf6ff" : "var(--primaryColor)",
-		transition: "color 0.9s ease-in-out",
+		transition: "color 0.4s ease-in-out",
 	};
 
 	const subheadingStyle = {
@@ -45,7 +45,7 @@ const FeaturesCardComponent: React.FC<featuresCardProps> = ({
 		border: isHovered
 			? "solid 0.5px  var(--secondaryColor)"
 			: "solid 0.5px var(--primaryColor)",
-		transition: "color 0.9s ease-in-out",
+		transition: "color 0.4s ease-in-out",
 	};
 
 	const subHeadingStyleSpan = {
@@ -54,7 +54,7 @@ const FeaturesCardComponent: React.FC<featuresCardProps> = ({
 
 	const featuresTextStyle = {
 		color: isHovered ? " var(--buttonTextColor)" : "var(--textColor)",
-		transition: "color 0.9s ease-in-out",
+		transition: "color 0.4s ease-in-out",
 	};
 
 	const contentsSpan = {
@@ -99,6 +99,7 @@ const FeaturesCardComponent: React.FC<featuresCardProps> = ({
 					{subHeading.map((ele, i) => {
 						return (
 							<div
+								key={i}
 								className={"sub-headings"}
 								style={subheadingStyle}
 							>
@@ -115,7 +116,7 @@ const FeaturesCardComponent: React.FC<featuresCardProps> = ({
 				<div className="features">
 					{features.map((ele, i) => {
 						return (
-							<div className={"contents"}>
+							<div className={"contents"} key={i}>
 								<div
 									className={
 										isHovered

@@ -20,7 +20,7 @@
 	/* margin:80px; */
 }
 .bodyContentSection2 {
-	margin-inline: 80px;
+	max-width: 80%;
 }
 .headerContent,
 .headerContent3 {
@@ -103,14 +103,9 @@
 .gridCarousel {
 	margin-bottom: 80px;
 }
-/* .gridCarouselContainer{
-	width:100%;
-	display: grid;
-	grid-template-columns: repeat(6,1fr);
-	grid-template-rows: repeat(2,1fr);
-	justify-content: center;
-	align-items: center;
-} */
+.gridCarouselContainer {
+	width: 100%;
+}
 
 .imageSection2 img {
 	filter: saturate(0%);
@@ -144,6 +139,9 @@
 	/* position: absolute; */
 	width: 100%;
 	/* bottom: 0; */
+}
+.carouselContainer2 {
+	width: 100%;
 }
 
 .contains {
@@ -229,21 +227,21 @@
 	font-family: "Barlow-Bold";
 	text-align: center;
 	color: rgba(248, 251, 255, 0);
-	--space: 4vw;
 	white-space: nowrap;
-	/* animation: marquee 1.2s linear infinite; */
 	direction: rtl;
+	/* animation: marquee 0.1s linear infinite; */
 }
 .marquee span {
 	color: var(--white);
+	padding-left: 200px;
 }
 
 @keyframes marquee {
 	0% {
-		transform: translateX(0);
+		transform: translateX(100%);
 	}
 	100% {
-		transform: translateX(-50%);
+		transform: translateX(-100%);
 	}
 }
 
@@ -271,14 +269,17 @@
 .buttonContentSection {
 	font-size: 24px;
 	font-family: "Futura-Medium";
-	color: var(--white);
 	text-transform: uppercase;
 	text-decoration: none;
 	white-space: nowrap;
 	border-radius: 4px;
 	border: solid 1px var(--white);
-	padding: 24px 60px;
+	padding: 24px 98px;
 	margin-block: 80px;
+}
+
+.buttonContentSection a {
+	color: var(--white);
 }
 .contentSection2 {
 	margin-top: 80px;
@@ -294,12 +295,11 @@
 	align-items: center;
 	text-align: center;
 	margin-top: 80px;
-	width: auto;
 	background-image: url("../../assets/images/signupformbg.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	height: auto;
+	padding-inline: 5vh;
 }
 .signupFormContent .headerContent {
 	margin-block: 80px;
@@ -310,6 +310,33 @@
 	background-color: var(--white);
 	/* width: 760px; */
 	margin-bottom: 80px;
+}
+
+.arrow {
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-70%);
+	font-size: 32px;
+	color: black;
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	z-index: 5;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+	line-height: 1px;
+	transition: 0.25s ease-in-out;
+}
+.arrow.left {
+	left: 30px;
+}
+.arrow.right {
+	right: 30px;
+}
+:hover .arrow {
+	opacity: 1;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -397,11 +424,9 @@
 	}
 	.titleContent {
 		font-size: 40px;
-		/* width: 77%; */
 	}
 	.titleSubContent {
-		font-size: 16px;
-		/* width: 68%; */
+		font-size: 14px;
 	}
 	.cardContentSection {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -443,7 +468,7 @@
 		font-size: 32px;
 	}
 	.paragraphContent {
-		font-size: 14px;
+		/* font-size: 14px; */
 		margin-bottom: 30px;
 	}
 	.headerContent2 {
@@ -458,11 +483,10 @@
 	.carouselParagraphContent {
 		font-size: 10px;
 	}
-	.headerContent3,
-	.headerContent4 {
+	/* .headerContent3 {
 		font-size: 24px;
 		max-width: none;
-	}
+	} */
 	.carouselHeaderContent {
 		font-size: 16px;
 	}
@@ -472,11 +496,12 @@
 	.titleContent {
 		font-size: 24px;
 	}
-	.titleSubContent {
-		font-size: 12px;
-	}
+
 	.cardContentSection {
 		grid-template-columns: repeat(1, minmax(0, 1fr));
 		padding-inline: 4vh;
+	}
+	.buttonContentSection {
+		padding: 24px 40px;
 	}
 }

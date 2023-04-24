@@ -17,20 +17,16 @@ div.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
 legend span {
 	font-size: 17px;
 }
-.e div.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-	border: solid 1px var(--red);
-
-}
 .termsConditions {
 	display: flex;
-	gap: 20px;
 	align-items: center;
-	font-size: 18px;
 	font-family: "Futura-Medium";
 	color: var(--darkPara);
 	margin-bottom: 38px;
 }
-
+.terms-text {
+	font-size: 18px;
+}
 .signUpFormContents .MuiButtonBase-root.MuiButton-root,
 .signUpFormContents .MuiButtonBase-root.MuiButton-root:hover {
 	background-color: var(--secondaryColor);
@@ -40,13 +36,16 @@ legend span {
 	text-transform: uppercase;
 	white-space: nowrap;
 }
-.error {
-	color: red;
-	/* margin-bottom: 22px; */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
-@media screen and (max-width:744px)
-{
+@media screen and (max-width: 744px) {
 	.signUpFormContents .MuiInputBase-input.MuiOutlinedInput-input {
-		padding:16.5px 14px;
+		padding: 16.5px 14px;
+	}
+	.terms-text {
+		font-size: 14px;
 	}
 }
