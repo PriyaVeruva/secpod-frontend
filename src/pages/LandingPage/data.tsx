@@ -139,7 +139,8 @@ export const cardContainerData = [
 	},
 	{
 		image: card2Image2,
-		heading: "Manage Vulnerabilities and Beyond From A Centralized Solution",
+		heading:
+			"Manage Vulnerabilities and Beyond From A Centralized Solution",
 		subHeading:
 			"Discover and remediate vulnerabilities,IT asset exposures,misconfigurations,missing patches,anomalies,and security control deviations from a single console.",
 	},
@@ -151,13 +152,15 @@ export const cardContainerData = [
 	},
 	{
 		image: card4Image4,
-		heading: "Patch 30+ OSs and 400+ Third-party Apps and Remediate Vulnerabilities On-time",
+		heading:
+			"Patch 30+ OSs and 400+ Third-party Apps and Remediate Vulnerabilities On-time",
 		subHeading:
 			"Fix vulnerabilities on all OSs and a wide range of third-party applications instantly from the same console using a natively built,truly-integrated patch management solution.",
 	},
 	{
 		image: card5Image5,
-		heading: "Go Beyond Patching with 100+ Security Controls to Mitigate Risks ",
+		heading:
+			"Go Beyond Patching with 100+ Security Controls to Mitigate Risks ",
 		subHeading:
 			"Along with patching,leverage hundrends of security remediation controls to mitigate vulnerabilities and numerous security risks.",
 	},
@@ -231,27 +234,27 @@ export const cardContainerData2 = [
 ];
 export const carouselDataContent1 = [
 	{
-		header: CAROUSEL_HEADER_CONTENT_1,
-		subHeader: CAROUSEL_SUB_HEADER_CONTENT_1,
-		paragraphContent: CAROUSEL_PARAGRAPH_CONTENT_1,
+		largeText: CAROUSEL_HEADER_CONTENT_1,
+		mediumText: CAROUSEL_SUB_HEADER_CONTENT_1,
+		smallText: CAROUSEL_PARAGRAPH_CONTENT_1,
 		image: avatarImage,
 	},
 	{
-		header: CAROUSEL_HEADER_CONTENT_1,
-		subHeader: CAROUSEL_SUB_HEADER_CONTENT_1,
-		paragraphContent: CAROUSEL_PARAGRAPH_CONTENT_1,
+		largeText: CAROUSEL_HEADER_CONTENT_1,
+		mediumText: CAROUSEL_SUB_HEADER_CONTENT_1,
+		smallText: CAROUSEL_PARAGRAPH_CONTENT_1,
 		image: avatarImage,
 	},
 ];
 export const carouselDataContent2 = [
 	{
-		header: CAROUSEL_HEADER_CONTENT_2,
-		subHeader: CAROUSEL_SUB_HEADER_CONTENT_2,
+		largeText: CAROUSEL_HEADER_CONTENT_2,
+		mediumText: CAROUSEL_SUB_HEADER_CONTENT_2,
 		image: carouselImage2,
 	},
 	{
-		header: CAROUSEL_HEADER_CONTENT_2,
-		subHeader: CAROUSEL_SUB_HEADER_CONTENT_2,
+		largeText: CAROUSEL_HEADER_CONTENT_2,
+		mediumText: CAROUSEL_SUB_HEADER_CONTENT_2,
 		image: carouselImage2,
 	},
 ];

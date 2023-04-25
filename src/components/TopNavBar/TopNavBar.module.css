@@ -50,22 +50,21 @@
 		0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
 }
 
-.mobileShow{
+.mobileShow {
 	display: flex;
 }
 
-@media screen and (max-width:744px){
-	.mobileHide{
+@media screen and (max-width: 744px) {
+	.mobileHide {
 		display: none;
 	}
-	.header{
+	.header {
 		padding: 24px;
 	}
-	.button{
-		padding:14px 40px;
+	.button {
+		padding: 14px 40px;
 	}
-	.Logo{
+	.Logo {
 		font-size: 24px;
 	}
-
 }

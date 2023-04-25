@@ -13,22 +13,13 @@ import SignUpForm from "../SignUpFormik/SignUpForm";
 import Footer from "../../components/Footer/Footer";
 import "./slick.css";
 import "./slick-theme.css";
-import Slider from "react-slick";
 import Features from "../Features/Features";
 import Tools from "../Tools/Tools";
 import Pricing from "../Pricing/Pricing";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
-// import Carousel from "react-grid-carousel";
+import CarouselComponent from "../../components/CarouselComponent/CarouselComponent";
+import Carousel from "better-react-carousel";
 function LandingPage() {
-	const settings = {
-		dots: true,
-		infinite: true,
-		arrow: true,
-		speed: 800,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-	};
-
 	type arrowDataType = {
 		onClick?: () => void;
 	};
@@ -54,19 +45,21 @@ function LandingPage() {
 			</div>
 		);
 	}
-
 	return (
 		<>
 			<TopNavBar />
 
 			<div className={styles.pageContainer}>
 				<div className={styles.bodyContent}>
-					<div className={styles.headerContent}>
-						{HEADER_CONTENT}
+					<div className={styles.bodyTextContents}>
+						<div className={styles.headerContent}>
+							{HEADER_CONTENT}
+						</div>
+						<div className={styles.paragraphContent}>
+							{PARAGRAPH_CONTENT}
+						</div>
 					</div>
-					<div className={styles.paragraphContent}>
-						{PARAGRAPH_CONTENT}
-					</div>
+
 					<div className={styles.button}>
 						{ButtonContentData.map((ele, i) => {
 							return (
@@ -95,149 +88,33 @@ function LandingPage() {
 
 				{/*carousel 1  */}
 				<div className={styles.gridCarousel}>
-					<Slider
-						{...{
-							settings,
-							rows: 2,
-							slidesPerRow: 2,
-							centerMode: true,
-							centerPadding: "360px",
-							autoplay: true,
-							nextArrow: <NextArrow />,
-							prevArrow: <PrevArrow />,
-							// className:"center",
-
-							responsive: [
-								{
-									breakpoint: 1200,
-									settings: {
-										slidesToShow: 4,
-										slidesToScroll: 1,
-									},
-								},
-								{
-									breakpoint: 900,
-									settings: {
-										slidesToShow: 3,
-										slidesToScroll: 1,
-										initialSlide: 3,
-									},
-								},
-								{
-									breakpoint: 700,
-									settings: {
-										slidesToShow: 2,
-										slidesToScroll: 1,
-									},
-								},
-								{
-									breakpoint: 500,
-									settings: {
-										slidesToShow: 2,
-										slidesToScroll: 1,
-									},
-								},
-							],
-						}}
-					>
-						{Logos.map((ele, i) => {
-							return (
-								<div
-									className={styles.imageSection2}
-									key={i}
-								>
-									<img src={ele.image} alt="" />
-								</div>
-							);
-						})}
-					</Slider>
-
-					{/* <Carousel
-						cols={6}
+					<Carousel
+						cols={3}
 						rows={2}
-						gap={10}
-						responsiveLayout={[
-							{
-								breakpoint: 1440,
-								cols: 4,
-								gap: 5,
-							},
-							{
-								breakpoint: 768,
-								cols: 2,
-							},
-						]}
-						mobileBreakpoint={670}
-						loop={true}
-						autoplay={1000}
+						loop
+						autoplay={2000}
+						arrowLeft={<PrevArrow />}
+						arrowRight={<NextArrow />}
 					>
 						{Logos.map((ele, i) => {
 							return (
-								<Carousel.Item>
-									<div
-										className={
-											styles.imageSection2
-										}
-									>
-										<img src={ele.image} alt="" />
-									</div>
+								<Carousel.Item key={i}>
+									<img src={ele.image} alt="" />
 								</Carousel.Item>
 							);
 						})}
-					</Carousel> */}
+					</Carousel>
 				</div>
 
 				{/* carousel 2 */}
 
 				<div className={styles.carouselContent}>
 					<div className={styles.carouselContainer}>
-						<Slider {...settings}>
-							{carouselDataContent1.map((ele, i) => {
-								return (
-									<div
-										className={styles.contains}
-										key={i}
-									>
-										<img
-											src={ele.image}
-											alt=""
-											className={
-												styles.carouselImageSection
-											}
-										/>
-										<div
-											className={
-												styles.carouselContentSection
-											}
-										>
-											<div
-												className={
-													styles.carouselHeader
-												}
-											>
-												{ele.header}
-											</div>
-											<div
-												className={
-													styles.carouselSubHeader
-												}
-											>
-												{ele.subHeader}
-											</div>
-											<div
-												className={
-													styles.carouselParagraphContent
-												}
-											>
-												{
-													ele.paragraphContent
-												}
-											</div>
-										</div>
-									</div>
-								);
-							})}
-						</Slider>
+						<CarouselComponent
+							singleCarousel={true}
+							carouselData={carouselDataContent1}
+							carouselStyles={true}
+						/>
 					</div>
 				</div>
 				<div id="features">

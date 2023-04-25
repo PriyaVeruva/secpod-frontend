@@ -1,0 +1,119 @@
+.contains {
+	display: flex !important;
+	justify-content: center !important ;
+	align-items: center !important ;
+	width: 70% !important;
+	margin: 0 auto;
+	padding-top: 10vh;
+}
+.carouselVisibility {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	background-color: #f0faf0;
+	flex-direction: row-reverse;
+}
+.carouselImageSection {
+	margin: 0 80px 0 0 !important;
+}
+.carousel2ImageSection {
+	width: 50%;
+}
+.carouselContentSection {
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+}
+.carouselContentSection2 {
+	margin-inline: 40px;
+}
+.carouselHeader {
+	font-size: 32px;
+	font-family: "Barlow-Bold";
+	color: var(--primaryColor);
+	margin-bottom: 10px;
+}
+.carouselHeaderContent {
+	font-size: 40px;
+	color: #22bc2c;
+	text-align: start;
+	margin-bottom: 40px;
+	font-family: "Barlow-Bold";
+}
+.carouselSubHeader {
+	font-size: 20px;
+	font-family: "Barlow-Medium";
+	color: var(--secondaryColor);
+	margin-bottom: 20px;
+}
+.carouselsubHeaderContent {
+	font-size: 32px;
+	color: var(--darkPara);
+	text-align: start;
+	font-family: "Futura-Medium";
+}
+.carouselParagraphContent {
+	font-size: 18px;
+	font-family: "Futura-Medium";
+	color: var(--darkPara);
+}
+
+@media only screen and (max-width: 768px) {
+	.carouselHeader {
+		font-size: 24px;
+	}
+	.carouselSubHeader {
+		font-size: 18px;
+	}
+	.carouselParagraphContent {
+		font-size: 16px;
+	}
+	.carouselImageSection {
+		margin: 0 80px 0 0 !important;
+		width: 230px !important;
+	}
+	.contains {
+		width: 85% !important;
+	}
+	.carouselHeaderContent {
+		font-size: 24px;
+		margin-block: 20px;
+	}
+	.carouselsubHeaderContent {
+		font-size: 18px;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+}
+@media only screen and (max-width: 744px) {
+	.carouselContentSection2 {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.carouselVisibility {
+		flex-direction: column;
+	}
+	.carousel2ImageSection {
+		margin-top: 40px;
+	}
+	.contains {
+		flex-direction: column;
+	}
+	.carouselContentSection {
+		text-align: center;
+		margin-top: 20px;
+	}
+	.carouselImageSection {
+		margin: 0 !important;
+	}
+}
+@media only screen and (max-width: 425px) {
+	.carouselHeaderContent {
+		font-size: 18px;
+	}
+	.carouselsubHeaderContent {
+		font-size: 14px;
+	}
+}

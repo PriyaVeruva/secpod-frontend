@@ -156,7 +156,8 @@ export const SocialMediaLinksAndLogos = [
 		image: linkendInLogo,
 	},
 	{
-		link: "https://www.instagram.com/secpodtechnologies/?igshid=1lc509npie1ac",
+		link:
+			"https://www.instagram.com/secpodtechnologies/?igshid=1lc509npie1ac",
 		image: instagram,
 	},
 	{
